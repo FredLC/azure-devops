@@ -24,19 +24,18 @@ You may also need to run this command to install the Packer Azure plugin: `packe
 4. Make sure your service principal has sufficient permissions by assigning it the contributor role:
    ```
    az role assignment create \
-  --assignee <client_id> \
-  --role Contributor \
-  --subscription <subscription_id>
+     --assignee <client_id> \
+     --role Contributor \
+     --subscription <subscription_id>
    ```
 5. Run the following command in the project directory:
    ```
    packer build \
-  -var "client_id=<your-client-id>" \
-  -var "client_secret=<your-client-secret>" \
-  -var "subscription_id=<your-subscription-id>" \
-  server.json
+     -var "client_id=<your-client-id>" \
+     -var "client_secret=<your-client-secret>" \
+     -var "subscription_id=<your-subscription-id>" \
+     server.json
    ```
-6. 
 
 ### Output
 If the infrastructure was built without any errors, Terraform will output a success message. You will also get as an output the public IP address of the load balancer.
